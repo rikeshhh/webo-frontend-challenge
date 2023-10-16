@@ -405,7 +405,7 @@ body .payments {
   justify-content: center;
   align-items: center;
   margin-left: 8%;
-  padding: 139px 124px;
+  padding: 139px 124px 0px 124px;
 }
 body .payments .image-background {
   position: relative;
@@ -878,7 +878,7 @@ body .testinomial .testinomial-comment .testinomial-comment-box .model {
   }
 }
 body .statis {
-  padding: 100px 0px;
+  padding: 100px 0px 0px 0px;
 }
 body .statis .stats {
   display: flex;
