@@ -21,6 +21,52 @@ body .copy {
   line-height: 26px; /* 162.5% */
   letter-spacing: -0.32px;
 }
+body .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+body .overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+body .overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+body .overlay a:hover, body .overlay a:focus {
+  color: #f1f1f1;
+}
+body .overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+@media screen and (max-height: 450px) {
+  body .overlay a {
+    font-size: 20px;
+  }
+  body .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
 body .mobileNav {
   display: none;
 }
@@ -70,6 +116,11 @@ body nav .nav-button button:nth-child(2) {
   line-height: normal;
 }
 @media screen and (max-width: 768px) {
+  body nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
   body .mobileNav {
     display: block;
     justify-content: center;
@@ -82,19 +133,6 @@ body nav .nav-button button:nth-child(2) {
     justify-content: flex-end;
     height: 30px;
     padding: 40px;
-  }
-  body nav {
-    display: none;
-  }
-}
-@media screen and (max-width: 1200px) {
-  body .mobileNav {
-    display: none;
-  }
-}
-@media screen and (max-width: 992px) {
-  body .mobileNav {
-    display: none;
   }
 }
 body .hero-section {
@@ -191,7 +229,6 @@ body .hero-section .cur {
 }
 body .hero-section .bird {
   position: absolute;
-  position: absolute;
   top: 88px;
   right: 16px;
 }
@@ -201,7 +238,9 @@ body .hero-section .bird {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    height: 100vh;
+    height: 70vh;
+    padding: 163px 121px 72px 121px;
+    overflow: hidden;
   }
   body .hero-section h1 {
     width: 300px;
@@ -216,15 +255,21 @@ body .hero-section .bird {
     letter-spacing: -0.3px;
   }
   body .hero-section img {
-    margin-top: 0px;
-    max-width: 40%;
+    margin-top: -240px;
+    max-width: 80%;
   }
   body .hero-section .heroSpan {
     padding: 10px;
-    display: flex;
-    flex-direction: column;
     gap: 20px;
     justify-content: start;
+  }
+  body .hero-section .bird {
+    display: none;
+  }
+  body .cur {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
   }
 }
 body .software {
@@ -317,6 +362,7 @@ body .portfolio .portfolio-content-two img {
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    padding: 32px 39px;
   }
   body .portfolio .portfolio-content-one h1 {
     font-size: 24px;
@@ -475,24 +521,12 @@ body .payments p {
        object-fit: contain;
     width: 300px;
   }
-  body .payments .whyUs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    padding: 90px;
+  body .payments h1 {
+    font-size: 31px;
+  }
+  body .payments p {
     width: -moz-fit-content;
     width: fit-content;
-  }
-  body .payments .whyUs h1 {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-  body .payments .whyUs p {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.3px;
   }
 }
 body .transaction {
@@ -865,16 +899,21 @@ body .testinomial .testinomial-comment .testinomial-comment-box .model {
     width: 300px;
     height: 400px;
     flex-direction: column;
+    justify-content: center;
+    text-align: center;
     position: relative;
     gap: 10px;
   }
   body .testinomial .testinomial-comment .testinomial-comment-box p {
-    position: absolute;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.3px;
     width: -moz-fit-content;
     width: fit-content;
+    font-size: 16px;
+  }
+  body .testinomial .testinomial-comment .testinomial-comment-box img {
+    max-width: 30%;
   }
 }
 body .statis {
@@ -1155,8 +1194,6 @@ body .faq .faQueries .accordion[open] summary ~ * {
   }
 }
 body .faq .faQueries .questionBox {
-  width: 401px;
-  height: 512px;
   flex-shrink: 0;
   border-radius: 10px;
   border: 1px solid #CFCFCF;
@@ -1165,6 +1202,8 @@ body .faq .faQueries .questionBox {
   align-items: center;
   flex-direction: column;
   background: #FFF;
+  padding: 20px;
+  width: 100%;
 }
 body .faq .faQueries .questionBox h1 {
   color: #000;
@@ -1188,11 +1227,11 @@ body .faq .faQueries .questionBox p {
   width: 333px;
 }
 body .faq .faQueries .questionBox button {
-  width: 337px;
-  height: 76px;
+  width: 223px;
+  height: 67px;
   flex-shrink: 0;
+  border-radius: 10px;
   background: var(--pallet-4-accent, #FF7F5C);
-  color: white;
 }
 @media screen and (max-width: 768px) {
   body .faq {
@@ -1209,8 +1248,12 @@ body .faq .faQueries .questionBox button {
     grid-template-columns: 1fr;
     padding: 10px;
   }
-  body .faq .questionBox {
-    width: 250px;
+  body .faq .questionBox button {
+    width: 37px;
+    height: 76px;
+    flex-shrink: 0;
+    background: var(--pallet-4-accent, #FF7F5C);
+    color: white;
   }
 }
 body .discover {
@@ -1250,6 +1293,7 @@ body .discover .discoverBox button {
   flex-shrink: 0;
   border-radius: 10px;
   background: var(--pallet-4-accent, #FF7F5C);
+  color: #FFF;
 }
 body .discover .discoverBox .vector {
   position: absolute;
@@ -1327,26 +1371,9 @@ body .footer .footer-item .flexIcon {
   gap: 10px;
   font-size: 20px;
 }
-
 @media screen and (max-width: 768px) {
-  .footer {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .footer .footer-item h1 {
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.2;
-  }
-  .footer .footer-item p {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.3px;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-  .footer .footer-item .footerInput {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  body .footer {
+    grid-template-columns: 1fr;
+    padding: 50px 20px;
   }
 }/*# sourceMappingURL=main.css.map */

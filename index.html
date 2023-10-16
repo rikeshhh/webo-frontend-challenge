@@ -17,16 +17,27 @@
     />
   </head>
   <body>
+    <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="#">Product</a>
+    <a href="#">Template</a>
+    <a href="#">Blog</a>
+    <a href="#">Pricing</a>
+  </div>
+</div>
     <div class="mobileNav">
 <div class="mobile-item">
-  <i class="fa-solid fa-bars"></i>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()"> <i class="fa-solid fa-bars"></i></span>
+
+ 
 </div>
     </div>
     <nav>
       <h1>AR Shakir</h1>
       <ul>
-        <li>Product &nbsp;<i class="fa-solid fa-chevron-down"></i></li>
-        <li>Template &nbsp;<i class="fa-solid fa-chevron-down"></i></li>
+        <li onclick="openBox()">Product &nbsp;<i class="fa-solid fa-chevron-down"></i></li>
+        <li onclick="openBox()">Template &nbsp;<i class="fa-solid fa-chevron-down"></i></li>
         
         <li>Blog</li>
         <li>Pricing</li>
@@ -231,8 +242,8 @@
           <img src="/image/model.png" alt="" />
         </div>
         <div class="testinomial-comment-box">
-          <div class="test-quot">
-            <img src="/image//quot.svg" class="quot" alt="">
+          <div>
+                      <img src="/image//quot.svg" class="quot" alt="">
 
             <p>
               Wise busy past both park when an ye no. Nay likely her length
@@ -241,7 +252,7 @@
             </p>
             <span>- Mike Taylor, Web Designer</span>
           </div>
-          <img src="/image/model.png" class="model" />
+          <img src="/image/model.png" alt="" />
         </div>
       </div>
     </section>

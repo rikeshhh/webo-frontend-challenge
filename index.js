@@ -1,15 +1,10 @@
-const elements = document.querySelectorAll('.animate-on-scroll');
-
-function checkScroll() {
-  elements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
-
-    if (elementTop < window.innerHeight) {
-      element.style.opacity = 1;
-    } else {
-      element.style.opacity = 0;
-    }
-  });
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
 }
 
-window.addEventListener('scroll', checkScroll);
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+function openBox() {
+  document.getElementById("myNav").style.width ="20%";
+}
